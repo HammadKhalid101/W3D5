@@ -9,13 +9,22 @@ class PolyTreeNode
     end
 
     def parent=(node)
+        # self.parent ||= node
         # self.parent = node
-         if !node.children.any?{|child| child == self}
+
+        if !node.children.any?{|child| child == self}
             node.children.unshift(self)
         end
     end
 
-
+    def add_child
+        
+    end
 
 
 end
+
+new_node = PolyTreeNode.new("A")
+# p new_node
+new_node.parent = PolyTreeNode.new("Z")
+p new_node
